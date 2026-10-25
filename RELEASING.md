@@ -13,7 +13,7 @@ grep 전수 조사(2026-07-17, v2.0.1 기준)로 확정한 목록입니다.
 | 3 | `.claude/skills/humanize-korean/SKILL.md` | Phase 0 런타임 배너 (`humanize-korean vX.Y — {fast\|strict} 모드 …`) | `vX.Y` — 실행 시 사용자에게 그대로 출력됨 |
 | 4 | `README.md` | 제목(H1) + "아키텍처" 헤더 | `vX.Y.Z` / `vX.Y` |
 | 5 | `README.md` | 신규 릴리스 노트 절 (`## vX.Y — …`) | 절 추가 |
-| 6 | `CLAUDE.md` | 제목(H1) | `vX.Y.Z` |
+| 6 | `AGENTS.md` | 제목(H1) | `vX.Y.Z` |
 | 7 | `.claude/commands/humanize.md` | 배너 예시 (`humanize-korean vX.Y — strict 모드 …`) | `vX.Y` |
 | 8 | `references/ai-tell-taxonomy.md` | 제목(H1) + "버전 관리" 절 | 분류 체계 버전 — 스킬 버전과 **별개 트랙**. 분류 변경이 있는 릴리스에서만 갱신 |
 | 9 | `references/quick-rules.md` | 제목(H1) | 분류 체계 버전 트랙과 동행 |
@@ -26,7 +26,7 @@ grep 전수 조사(2026-07-17, v2.0.1 기준)로 확정한 목록입니다.
 ```bash
 grep -rn "v[0-9]\.[0-9]" \
   .claude/skills/humanize-korean/SKILL.md \
-  .claude/commands/ CLAUDE.md \
+  .claude/commands/ AGENTS.md \
   | grep -v "역사\|이력\|변경 고지\|버전 요약"
 # README.md는 과거 릴리스 노트가 많으므로 제목·아키텍처 헤더만 육안 확인:
 sed -n '1,40p' README.md
@@ -40,7 +40,7 @@ sed -n '1,40p' README.md
 - [ ] **테스트**: `python3 -m pytest tests/ -q` 전체 통과 (pytest 미설치 환경이면 `pip install pytest` 후 실행)
 - [ ] **shim 스모크**: `python3 scripts/prepare_monolith_input.py --text "테스트 문장입니다." --genre essay` 가 `00_metrics.json` + `01_input_with_metrics.txt`를 만드는지 확인 (생성된 임시 run 디렉토리는 삭제)
 - [ ] **버전 문자열**: §1 표의 #1~#9 전수 갱신 — 특히 **SKILL.md frontmatter·배너** (과거 2회 누락 지점)
-- [ ] **문서 정합**: 도구 호출 캡·산출물 목록(fast=`final.md` 1개, strict=`final.md`+`summary.md`)이 SKILL.md·README·CLAUDE.md·에이전트 정의에서 일치하는지
+- [ ] **문서 정합**: 도구 호출 캡·산출물 목록(fast=`final.md` 1개, strict=`final.md`+`summary.md`)이 SKILL.md·README·AGENTS.md·에이전트 정의에서 일치하는지
 - [ ] **발행 노트**: README에 `## vX.Y` 절 작성, 검증 결과는 실측 수치만 (추정 금지)
 - [ ] **부속물**: 썸네일·social preview 갱신이 있으면 태그 전에 머지
 

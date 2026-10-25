@@ -25,7 +25,7 @@ v2.2부터 shim이 정량 점수로 산출하는 **`route_hint`(light | standard
 
 ```
 im-not-ai/
-├── CLAUDE.md                      # 본 파일 — 프로젝트 가이드
+├── AGENTS.md                      # 본 파일 — 프로젝트 가이드
 ├── README.md / INSTALL.md         # 사용·설치 안내
 ├── RELEASING.md                   # 릴리스 체크리스트 (버전 문자열 전수 + 글로벌 심링크 동기화)
 ├── CONTRIBUTORS.md
